@@ -31,6 +31,20 @@ For the extension to communicate with the IDE, you must start VS Code with the d
 - Select **Install from VSIX...**.
 - Choose `jtb-autorun-lite-1.0.1.vsix`.
 
+## ⚙️ Capabilities & Limitations
+
+### ✅ What it can do:
+- **Auto-Approve AI Prompts:** Instantly clicks "Run", "Accept", "Continue", and "Proceed" buttons.
+- **High Speed & Low Lag:** Uses CDP for sub-0.5s response times without taxing your CPU.
+- **Intelligent Filtering:** Specifically ignores text in code editors, chat logs, and terminals to prevent misclicks.
+- **Universal Compatibility:** Once installed, it works across all your VS Code projects.
+
+### ❌ What it cannot do (by design):
+- **Requires Debug Port:** It will not function if VS Code is launched without the `--remote-debugging-port=9222` flag.
+- **VS Code Bound:** The extension stops when VS Code is closed. Keep it open (minimized is fine).
+- **Native OS Access:** It cannot click OS-level system menus or native VS Code "File/Save" menus.
+- **Security Check:** It does **NOT** auto-click "Allow" for risky external file system access to protect your data from accidental loss.
+
 ## ⚙️ How it works
 
 Once installed, check the status bar (bottom right). You will see **⚡ AutoRun: ON**.
