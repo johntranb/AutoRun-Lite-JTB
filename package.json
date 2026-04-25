@@ -1,0 +1,39 @@
+{
+    "name": "jtb-autorun-lite",
+    "displayName": "JTB AutoRun Lite",
+    "description": "Premium, zero-latency Auto Run assistant for Antigravity AI, optimized by JTB.",
+    "publisher": "JTB",
+    "author": {
+        "name": "JTB - John Tran Business"
+    },
+    "version": "1.0.3",
+    "icon": "icon.png",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "agautorunlite.toggle",
+                "title": "Toggle Antigravity Auto Run Lite"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "agautorunlite.toggle",
+                "key": "ctrl+shift+alt+a",
+                "mac": "cmd+shift+alt+a"
+            }
+        ]
+    },
+    "dependencies": {
+        "ws": "^8.20.0"
+    }
+}
