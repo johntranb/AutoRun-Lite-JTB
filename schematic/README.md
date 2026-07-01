@@ -44,3 +44,32 @@ Files:
 - `oscillator.png` — rendered raster preview (2× scale)
 - `generate.js` — Node script that builds `oscillator.svg`
   (`node generate.js > oscillator.svg`)
+
+## 3. Bias / 1:10 current-mirror driver (`LS CRTS`)
+
+Two machine-drawn versions of the same hand-drawn sketch:
+
+### 3a. Interpreted / functional
+
+![Current mirror driver](current-mirror-driver.png)
+
+Drawn to show *how it works*: a `Vs` reference (series R + zener), an `EN`
+gated stage, and a reference transistor whose emitter resistor **R** sets
+`I_ref = 5V/R`. A **1:10 current mirror** (`1X`/`10X`) turns that into a
+**20 mA** output at node **A**, which drives the `LS CRTS` block (`4V shunt`,
+a switch, a resistor developing `VDG`, and a complementary pair).
+
+Files: `current-mirror-driver.svg`, `current-mirror-driver.png`,
+`generate2.js`.
+
+### 3b. Literal transcription
+
+![Literal transcription](schematic-literal.png)
+
+A faithful element-by-element trace of the sketch: each detected symbol
+(resistor, circled transistor, diode, box, block) placed where it appears on
+the page, using only the labels written in the photo (`Vs`, `EN`, `A`, `1X`,
+`10X`, `20 mA`, `5V/R`, `R`, `4V shunt`, `VDG`, `compl compl`, `LS CRTS`) —
+no functional reinterpretation.
+
+Files: `schematic-literal.svg`, `schematic-literal.png`, `generate3.js`.
