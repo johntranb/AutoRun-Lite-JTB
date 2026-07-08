@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" viewBox="0 0 760 560" font-family="'Segoe UI', Arial, sans-serif">
+  <title>Parallel circuit: source E with resistors R1 and R2</title>
+
+  <defs>
+    <!-- Arrowhead pointing along the path direction -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3"
+            orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#1a1a1a"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="760" height="560" fill="#ffffff"/>
+
+  <!-- ===================== WIRES ===================== -->
+  <g stroke="#1a1a1a" stroke-width="4" fill="none" stroke-linecap="round">
+    <!-- Top rail: left corner -> top-left node -> top-right node -->
+    <polyline points="120,120 380,120 620,120"/>
+    <!-- Bottom rail: left corner -> bottom node -> bottom-right node -->
+    <polyline points="120,440 380,440 620,440"/>
+
+    <!-- Left branch (battery branch) verticals -->
+    <line x1="120" y1="120" x2="120" y2="250"/>
+    <line x1="120" y1="310" x2="120" y2="440"/>
+
+    <!-- R1 branch verticals -->
+    <line x1="380" y1="120" x2="380" y2="240"/>
+    <line x1="380" y1="320" x2="380" y2="440"/>
+
+    <!-- R2 branch verticals -->
+    <line x1="620" y1="120" x2="620" y2="240"/>
+    <line x1="620" y1="320" x2="620" y2="440"/>
+  </g>
+
+  <!-- ===================== BATTERY (E) ===================== -->
+  <g stroke="#1a1a1a" stroke-width="4" stroke-linecap="round">
+    <!-- long plate (+) -->
+    <line x1="95" y1="250" x2="145" y2="250"/>
+    <!-- short plate (-) -->
+    <line x1="110" y1="272" x2="130" y2="272"/>
+    <!-- long plate (+) -->
+    <line x1="95" y1="288" x2="145" y2="288"/>
+    <!-- short plate (-) -->
+    <line x1="110" y1="310" x2="130" y2="310"/>
+  </g>
+  <text x="62" y="288" font-size="34" font-weight="600" fill="#1a1a1a" text-anchor="middle">E</text>
+  <text x="158" y="246" font-size="22" font-weight="700" fill="#1a1a1a">+</text>
+  <text x="158" y="322" font-size="26" font-weight="700" fill="#1a1a1a">&#8722;</text>
+
+  <!-- ===================== RESISTOR R1 ===================== -->
+  <polyline points="380,240 364,252 396,268 364,284 396,300 380,320"
+            fill="none" stroke="#1a1a1a" stroke-width="4"
+            stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="412" y="290" font-size="32" font-weight="600" fill="#1a1a1a">R1</text>
+
+  <!-- ===================== RESISTOR R2 ===================== -->
+  <polyline points="620,240 604,252 636,268 604,284 636,300 620,320"
+            fill="none" stroke="#1a1a1a" stroke-width="4"
+            stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="652" y="290" font-size="32" font-weight="600" fill="#1a1a1a">R2</text>
+
+  <!-- ===================== NODES ===================== -->
+  <g fill="#1a1a1a">
+    <circle cx="380" cy="120" r="6"/>
+    <circle cx="380" cy="440" r="6"/>
+  </g>
+
+  <!-- ===================== CURRENT ARROWS ===================== -->
+  <g stroke="#1a1a1a" stroke-width="3.5" fill="none">
+    <!-- I : total current, top rail, pointing left (into the source loop) -->
+    <line x1="300" y1="92" x2="220" y2="92" marker-end="url(#arrow)"/>
+    <!-- I : total current, bottom rail, pointing right -->
+    <line x1="200" y1="492" x2="280" y2="492" marker-end="url(#arrow)"/>
+    <!-- I1 : up through R1 branch (return) -->
+    <line x1="345" y1="410" x2="345" y2="350" marker-end="url(#arrow)"/>
+    <!-- I2 : up through R2 branch (return) -->
+    <line x1="585" y1="410" x2="585" y2="350" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- Current labels -->
+  <g font-size="28" font-weight="600" fill="#1a1a1a">
+    <text x="258" y="80" text-anchor="middle">I</text>
+    <text x="240" y="528" text-anchor="middle">I</text>
+    <text x="358" y="392">I1</text>
+    <text x="598" y="392">I2</text>
+  </g>
+</svg>
